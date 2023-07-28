@@ -24,5 +24,3 @@ add = (values['-ADDRESS-'])
 no = (values['-PHONE-'])
 info = [name, add, no]
 print (info)
-
-
