@@ -27,12 +27,6 @@ key_input.pack(pady=10)
 key_input.pack_propagate(False)
 key_input.configure(width=290, height=80)
 
-delete_btn_img = tk.PhotoImage(file='enter.png')
-
-delete_btn = tk.Button(key_frame, image=delete_btn_img, bd=0, command=delete_num)
-delete_btn.place(x=250, y=115)
-delete_btn.configure(width=40, height=50)
-
 key_pad=tk.Frame(key_frame)
 
 one_btn = tk.Button(key_pad, text='1', font=('Bold', 20), bd=0, command=lambda: insert_num(1))
@@ -62,16 +56,16 @@ eight_btn.place(x=70, y=140, width=70)
 nine_btn = tk.Button(key_pad, text='9', font=('Bold', 20), bd=0, command=lambda: insert_num(9))
 nine_btn.place(x=140, y=140, width=70)
 
-str_btn = tk.Button(key_pad, text='*', font=('Bold', 20), bd=0, command=lambda: insert_num('*'))
-str_btn.place(x=0, y=210, width=70)
+del_btn = tk.Button(key_pad, text='del', font=('Bold', 20), bd=0, command=delete_num)
+del_btn.place(x=0, y=210, width=70)
 
 zero_btn = tk.Button(key_pad, text='0', font=('Bold', 20), bd=0, command=lambda: insert_num(0))
 zero_btn.place(x=70, y=210, width=70)
 
-hash_btn = tk.Button(key_pad, text='#', font=('Bold', 20), bd=0, command=lambda: insert_num('#'))
-hash_btn.place(x=140, y=210, width=70)
+enter_btn = tk.Button(key_pad, text='enter', font=('Bold', 20), bd=0, command=lambda: insert_num('#'))
+enter_btn.place(x=140, y=210, width=70)
 
-key_pad.place(x=35, y=100, width=210, height=280)
+key_pad.place(x=45, y=100, width=210, height=280)
 
 key_frame.pack_propagate(False)
 key_frame.configure(width=300, height=400)
