@@ -7,6 +7,13 @@ root.tk_setPalette("black")
 
 def insert_num(number):
     key_entry.insert(tk.INSERT, number)
+    
+def delete_num():
+    index = int(key_entry.index(tk.INSERT)) - 1
+    if index != -1:
+        key_entry.delete(index)
+    print(index)
+    #index counts digits entered hencecan determine length for pin
 
 key_frame = tk.Frame(root, bg='red')
 key_frame.pack()
@@ -22,8 +29,9 @@ key_input.configure(width=290, height=80)
 
 delete_btn_img = tk.PhotoImage(file='enter.png')
 
-delete_btn = tk.Button(key_frame, image=delete_btn_img, bd=0)
+delete_btn = tk.Button(key_frame, image=delete_btn_img, bd=0, command=delete_num)
 delete_btn.place(x=250, y=115)
+delete_btn.configure(width=40, height=50)
 
 key_pad=tk.Frame(key_frame)
 
