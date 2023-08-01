@@ -38,6 +38,7 @@ def submit():
     stored_digits = ""
 
 root = tk.Tk()
+root.attributes('-fullscreen', True)
 root.geometry('300x400')
 root.title('PIN Verification')
 root.tk_setPalette("black")
