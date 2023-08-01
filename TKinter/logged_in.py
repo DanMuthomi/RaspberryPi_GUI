@@ -2,9 +2,10 @@ import tkinter as tk
 
 def logout():
     # Replace this function with the logout logic of your application
-    print("Logout button clicked")
+    #print("Logout button clicked")
     label_prompt.config(text="Logout button clicked")
-    import pinverify
+    root.destroy()
+    import home
 
 root = tk.Tk()
 #root.attributes('-fullscreen', True)

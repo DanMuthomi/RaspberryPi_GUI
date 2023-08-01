@@ -24,24 +24,25 @@ def submit():
         # Replace this condition with your actual PIN verification logic
         correct_pin = "1234"
         if stored_digits == correct_pin:
-            #result_text = "Correct PIN"
-            #result_color = "green"
+            result_text = ""
+            result_color = "green"
             error_label.config(text="Correct PIN", fg="green")
             stored_digits= ""
+            root.destroy()
             import logged_in
         else:
-            #result_text = "Incorrect PIN"
-            #result_color = "red"
+            result_text = ""
+            result_color = "red"
             error_label.config(text="Error: Incorrect PIN", fg="red")
             stored_digits= ""
     else:
-        #result_text = "Invalid PIN (4 digits required)"
-        #result_color = "orange"
+        result_text = ""
+        result_color = "orange"
         error_label.config(text="Error: Invalid PIN (4 digits required)", fg="orange")
         stored_digits= ""
     
     key_entry.delete(0, tk.END)
-    key_entry.insert(tk.END)
+    key_entry.insert(tk.END, result_text)
     key_entry.configure(fg=result_color)
     stored_digits = ""
 
