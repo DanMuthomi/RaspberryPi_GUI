@@ -1,4 +1,5 @@
 import tkinter as tk
+#import logged_in
 
 stored_digits = ""
 
@@ -23,32 +24,42 @@ def submit():
         # Replace this condition with your actual PIN verification logic
         correct_pin = "1234"
         if stored_digits == correct_pin:
-            result_text = "Correct PIN"
-            result_color = "green"
+            #result_text = "Correct PIN"
+            #result_color = "green"
+            error_label.config(text="Correct PIN", fg="green")
+            stored_digits= ""
+            import logged_in
         else:
-            result_text = "Incorrect PIN"
-            result_color = "red"
+            #result_text = "Incorrect PIN"
+            #result_color = "red"
+            error_label.config(text="Error: Incorrect PIN", fg="red")
+            stored_digits= ""
     else:
-        result_text = "Invalid PIN (4 digits required)"
-        result_color = "orange"
+        #result_text = "Invalid PIN (4 digits required)"
+        #result_color = "orange"
+        error_label.config(text="Error: Invalid PIN (4 digits required)", fg="orange")
+        stored_digits= ""
     
     key_entry.delete(0, tk.END)
-    key_entry.insert(tk.END, result_text)
+    key_entry.insert(tk.END)
     key_entry.configure(fg=result_color)
     stored_digits = ""
 
 root = tk.Tk()
-root.attributes('-fullscreen', True)
-root.geometry('300x400')
+#root.attributes('-fullscreen', True)
+root.geometry('800x480') #defines screen resolution
 root.title('PIN Verification')
 root.tk_setPalette("black")
 
 key_frame = tk.Frame(root, bg='black')
 key_frame.pack()
 
+error_label = tk.Label(key_frame, text="", font=('Bold', 12), fg="red", bg='black') 
+error_label.pack(pady=20)
+
 key_input = tk.Frame(key_frame)
 
-key_entry = tk.Entry(key_input, font=('Bold', 25), bd=0, justify=tk.CENTER)
+key_entry = tk.Entry(key_input, font=('Bold', 25), bd=0, justify=tk.CENTER, show='*') #include: show='*' to hide characters being typed
 key_entry.place(x=40, y=20, width=210)
 
 key_input.pack(pady=10)
@@ -93,7 +104,7 @@ zero_btn.place(x=70, y=210, width=70)
 enter_btn = tk.Button(key_pad, text='Enter', font=('Bold', 20), bd=0, command=submit)
 enter_btn.place(x=140, y=210, width=70)
 
-key_pad.place(x=45, y=100, width=210, height=280)
+key_pad.place(x=45, y=150, width=210, height=280)
 
 key_frame.pack_propagate(False)
 key_frame.configure(width=300, height=400)
