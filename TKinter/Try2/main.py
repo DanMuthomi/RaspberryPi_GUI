@@ -6,7 +6,7 @@ import logged_in
 class AppManager:
     def __init__(self):
         self.root = tk.Tk()
-        #self.root.attributes('-fullscreen', True)
+        self.root.attributes('-fullscreen', True)
         self.root.title('Main Application')
         self.root.tk_setPalette("black")
 
