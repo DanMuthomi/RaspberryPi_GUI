@@ -18,11 +18,11 @@ def resize_image(image_path, target_width, target_height):
     return ImageTk.PhotoImage(resized_image)
 
 def root_frame(parent, next_callback):
-    frame = tk.Frame(parent, bg='black')
+    frame = tk.Frame(parent, bg='white')
 
     # Load and resize the logo image
     logo_image = resize_image("GELogo.png", 800, 300)
-    logo_label = tk.Label(frame, image=logo_image, bg='black')
+    logo_label = tk.Label(frame, image=logo_image, bg='white')
     logo_label.image = logo_image  # Store a reference to the image to prevent garbage collection
     logo_label.pack()
 

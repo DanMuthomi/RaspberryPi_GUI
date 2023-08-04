@@ -45,9 +45,9 @@ def root_frame(parent, next_callback):
         key_entry.configure(fg=result_color)
         stored_digits = ""
 
-    frame = tk.Frame(parent, bg='black')
+    frame = tk.Frame(parent, bg='royal blue')
 
-    error_label = tk.Label(frame, text="", font=('Bold', 12), fg="red", bg='black')
+    error_label = tk.Label(frame, text="", font=('Bold', 12), fg="red", bg='royal blue')
     error_label.pack(pady=20)
 
     key_input = tk.Frame(frame)

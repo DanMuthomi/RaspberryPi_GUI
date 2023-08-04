@@ -8,7 +8,7 @@ class AppManager:
         self.root = tk.Tk()
         self.root.attributes('-fullscreen', True)
         self.root.title('Main Application')
-        self.root.tk_setPalette("black")
+        self.root.tk_setPalette("royal blue")
 
         self.current_frame = None
 

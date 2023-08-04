@@ -2,9 +2,9 @@ import tkinter as tk
 import home
 
 def root_frame(parent_frame, prev_callback):
-    frame = tk.Frame(parent_frame, bg='black')
+    frame = tk.Frame(parent_frame, bg='Royal blue')
 
-    label_prompt = tk.Label(frame, text="", font=('Bold', 20), bg='black', fg='white')
+    label_prompt = tk.Label(frame, text="", font=('Bold', 20), bg='royal blue', fg='white')
     label_prompt.pack(pady=20)
 
     def logout():
